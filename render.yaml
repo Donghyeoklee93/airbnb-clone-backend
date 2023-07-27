@@ -7,7 +7,7 @@ databases:
 services:
   - type: web
     name: airbnbclone-backend
-    env: python
+    runtime: python
     region: singapore
     buildCommand: "./build.sh"
     startCommand: "gunicorn config.wsgi:application"
