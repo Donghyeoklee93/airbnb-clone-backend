@@ -1,16 +1,16 @@
 databases:
-  - name: airbnbclone
+  - name: airbnbclone-db
     databaseName: airbnbclone
     user: airbnbclone
     region: singapore
 
 services:
   - type: web
-    name: airbnbclone
-    runtime: python
+    name: airbnbclone-backend
+    env: python
     region: singapore
     buildCommand: "./build.sh"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn config.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
